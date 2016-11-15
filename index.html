@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notes</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	
+	<link rel="stylesheet" href="css/main.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" defer></script>
+	<!-- <script src="https://dist/js/bootstrap-checkbox.min.js" defer></script> -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+	
+</head>
+<body ng-app="Notes" class="container" ng-controller="notes" onload="startTime()">
+
+<script type="text/javascript">
+	if(typeof(Storage) == "underfined") {
+		alert("Khong the dung Local Storage");
+	}
+</script>
+<h1 class="text-center">Notes</h1>
+
+<h4 class="text-right" id="txt"></h4>
+<div class="container">
+
+    <div class="col-sm-12 container" id="notes">
+        <div class="row">
+
+            <div class="col-sm-3 container" id="list">
+            	<h1 class="text-center">List</h1>
+				<ul  ng-repeat="x in notes track by $index " >
+					<button class="button" ng-click="Set($index)"><span id="title">{{x.title}}</span></button>
+				</ul>
+            </div>
+            <div class="col-sm-9 container" id="write">
+	            <div class="form-group">
+	            	<h3>{{err}}</h3>
+					<a ng-click=Add() class="btn-floating btn-large waves-effect waves-light blue" id="add"><i class="material-icons">add</i></a>
+					<span for="inputsm">Title: </span>
+				    <input class="textInput" style="font-size:30px;height:40px;width:680px;" maxlength="20" id="inputsm" type="text" ng-model="title" value={{title}}>
+   			    </div>
+                Content:
+                <textarea class="form-control" id="textarea" name="textarea" rows="15" cols="17" ng-model="text"><span id="text">{{text}}</span></textarea>    
+               	
+               	<div class="row">
+               		<div class="col-md-6">
+               			<div><span class="date">Created: {{dateInit | date: 'medium'}}</span></div>
+							<div><span class="date">Update: {{update | date: 'medium'}}</span></div>
+							
+					</div>		        
+					<div class="col-md-3">
+						<input type="checkbox" ng-model="check" id="done"> <label for="done">COMPLETE?</label>
+					</div>        
+		            <div class="col-md-3">
+		            	<a id="save"  ng-click=Save() class="btn-floating btn-large waves-effect waves-light brown"><i class="material-icons left">save</i>SAVE</a>
+		                <a id="delete" ng-click=Delete() class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons left">delete</i>DELETE</a>
+		            </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+    background-image: url("http://www.walldevil.com/wallpapers/a33/wallpaper-filter-newest-brown-screen-queenstown-digital-wallpapers-room-wood-resolutions-visions.jpg");
+    /*background-color: #cccccc;*/
+}
+#save{
+	margin-left: 30.9px;
+	margin-top: -30px;
+}
+
+#delete{
+	margin-left: 30.9px;
+	margin-top: -30px;
+	margin-right: -5px;
+}
+#add {
+	margin-left: -25px;
+}
+
+#textarea {
+   resize: none;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   position: relative;
+   font-size: 25px;
+   /*background-image: url("http://www.walldevil.com/wallpapers/a33/wallpaper-filter-newest-brown-screen-queenstown-digital-wallpapers-room-wood-resolutions-visions.jpg");*/
+   background: #FFB74D;
+   opacity: 0.6;
+   color: black;
+}
+.date {
+	 color: white  ;
+}
+
+#done {
+  color: white  ;
+  font-size: 40px;
+  width: 40px;
+  transform: scale(4.5); 
+}
+
+.form-group {
+	font-size: 30px;
+}
+
+.form-control {
+	font-size: 30px;
+
+}
+
+.textInput {
+	width: 30px;
+}
+
+div.scroll {
+    /*background-color: #00FFFF;*/
+    width: 70px;
+    height: 500px;
+    overflow: scroll;
+}
+
+#note {
+	width: 300px;
+	border: none;
+}
+.button {
+  border-radius: 4px;
+  background-color: #00BCD4;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 28px;
+  /*padding: 20px;*/
+  width: 260px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+  height: 50px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span::after {
+  content: '>';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
